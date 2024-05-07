@@ -12,8 +12,6 @@
 <title> Fractran </title>
 <script>
 
-// Mathematical Functions
-
 	var MQ = MathQuill.getInterface(2);
 
 	var cursor_str = "<span style='border-left: 1px solid black; margin-left:-1px;padding:0'>&#8203;</span>";
@@ -688,8 +686,6 @@
 		return(tkas_to_rawpls(L));
 		};
 
-// HTML Functions
-
 	var g_rawfl = [];
 	var g_fracl = [];
 
@@ -994,8 +990,6 @@
 
 		document.getElementById("animation").innerHTML = str;
 		}
-
-// Game Functions
 
 	var g_ani_flag = false;
 
@@ -1355,8 +1349,6 @@
 		load_level(0);
 		do_chk_show_instructions()
 		}
-
-// Level Definitions
 
 	var levels = [];
 	/*levels.push({
@@ -1836,7 +1828,7 @@
 
 </script>
 <style>
-	
+
 	@font-face {
 		font-family: "tech";
 		src: url("lmmonoproplt10-regular-webfont.woff");
@@ -1930,89 +1922,72 @@
 </style>
 </head>
 <body onload="boot()">
-
-<h1 style="left:0;right:0;margin:auto;text-align:center;font-weight:normal"><span class='fractran'>FRACTRAN</span></h1>
-
-<h2> Level Select:
-<span id="level_sel" style='display:none'>
-</span>
-</h2>
-
-<div class="zone" id='level_select_butts'>
-</div>
-
-<h2 id='current_level_name'>
-FRACTRAN
-</h2>
-
-<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
-<div id="level_text">
-</div>
-</div>
-
-<h2>
-Input Device: <select id="sel_inp" onchange="do_sel_inp(event)">
-<option value="tmq">TKAS Mathquill</option>
-<option value="text" selected>Text</option>
-</select>
-</h2>
-
-<div class="zone">
-<input type="checkbox" id="chk_show_instructions" onchange="do_chk_show_instructions()"> Show Instructions
-<span id="chk_no_cancel_container"><input type="checkbox" id="chk_no_cancel" onchange="do_chk_no_cancel()"> nocancel </span>
-<span id="chk_comments_container"><input type="checkbox" id="chk_comments" onchange="do_chk_comments()"> Show Comment Box </span>
-<div id="text_in_area">
-<div id="text_instructions">
-<ul>
-<li> Fractions are separated with spaces or commas.
-<li> Separate numerator and denominator with <kbd>/</kbd>. Do not include spaces within a fraction.
-<li> Numerator and denominator should be products of numbers (to powers).
-<li> Enter powers with <kbd>^</kbd>. Multiply with <kbd>*</kbd>.
-<li> Do not use parentheses.
-</ul>
-<p>Example Valid Syntax: <kbd>1/2, 3/4*5, 2^3/5^4, 4*10^2/3^2*5</kbd></p>
-</div>
-
-Type Program Here: <textarea style='vertical-align:middle' type="text" id="text_in" oninput="do_text_in(event)"></textarea>
-</div>
-
-<div id="mq_in_area">
-<div id="mq_instructions">
-<ul>
-<li>Use <kbd>/</kbd> and <kbd>^</kbd> to create fractions, exponents. 
-<li> Separate fractions with commas. 
-<li> Use LEFT ARROW to break out of exponents and fractions. 
-<li> Please report bugs. If you encounter parse errors, drop down to "Text".
-</ul>
-</div>
-Type Program Here: <span id="mq_in" style='background-color:white'></span>
-</div>
-
-<div id="comment_zone"></div>
-
-<div id="flist_out" style="overflow-x:auto;white-space:nowrap"></div>
-<button onclick='test_level(g_current_level)'>Test Solution</button>
-</div>
-
-<div id="check_out"></div>
-
-<h2>Step-By-Step Debugger:</h2>
-
-<div class='zone'>
-
-<p>
-This isn't necessary for the game, but it can be useful to test your program on various inputs, to get an instinct for what <span class='fractran'>FRACTRAN</span> programs do. The area below provides some tools for doing that.
-<ul>
-<li> Enter an input value in the box and either the "Advance One Step" or "Advance 1000 Steps" buttons
-<li> You can also view a rudimentary animation of running numbers through the program
-</ul>
-</p>
-
-Input: <input type="text" value=2 style='width:10em' id="number_in" oninput="reset_runtable()"> <button onclick="butt_once()">Advance One Step</button> <button onclick="butt_many()">Advance 1000 Steps</button>
-Animation: <button id='ani_pp' onclick='butt_ani_pp()'>Play</button> Frame Number: <input type="number" style='width:5em' value=0 id="animation_framecount" oninput="do_animate()"> <button onclick='document.getElementById("animation_framecount").value = 0; do_animate()'>Reset</button>
-<div id="animation"></div>
-<div id="runtable"></div>
-</div>
-
+	<h1 style="left:0;right:0;margin:auto;text-align:center;font-weight:normal"><span class='fractran'>FRACTRAN</span></h1>
+	<h2> Level Select:
+	   <span id="level_sel" style='display:none'>
+	   </span>
+	</h2>
+	<div class="zone" id='level_select_butts'></div>
+	<h2 id='current_level_name'>
+	   FRACTRAN
+	</h2>
+	<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
+	   <div id="level_text"></div>
+	</div>
+	<h2>
+	   Input Device: 
+	   <select id="sel_inp" onchange="do_sel_inp(event)">
+	      <option value="tmq">TKAS Mathquill</option>
+	      <option value="text" selected>Text</option>
+	   </select>
+	</h2>
+	<div class="zone">
+	   <input type="checkbox" id="chk_show_instructions" onchange="do_chk_show_instructions()"> Show Instructions
+	   <span id="chk_no_cancel_container"><input type="checkbox" id="chk_no_cancel" onchange="do_chk_no_cancel()"> nocancel </span>
+	   <span id="chk_comments_container"><input type="checkbox" id="chk_comments" onchange="do_chk_comments()"> Show Comment Box </span>
+	   <div id="text_in_area">
+	      <div id="text_instructions">
+	         <ul>
+	            <li> Fractions are separated with spaces or commas.
+	            <li> Separate numerator and denominator with <kbd>/</kbd>. Do not include spaces within a fraction.
+	            <li> Numerator and denominator should be products of numbers (to powers).
+	            <li> Enter powers with <kbd>^</kbd>. Multiply with <kbd>*</kbd>.
+	            <li> Do not use parentheses.
+	         </ul>
+	         <p>Example Valid Syntax: <kbd>1/2, 3/4*5, 2^3/5^4, 4*10^2/3^2*5</kbd></p>
+	      </div>
+	      Type Program Here: 
+	      <textarea style='vertical-align:middle' type="text" id="text_in" oninput="do_text_in(event)"></textarea>
+	   </div>
+	   <div id="mq_in_area">
+	      <div id="mq_instructions">
+	         <ul>
+	            <li>Use <kbd>/</kbd> and <kbd>^</kbd> to create fractions, exponents. 
+	            <li> Separate fractions with commas. 
+	            <li> Use LEFT ARROW to break out of exponents and fractions. 
+	            <li> Please report bugs. If you encounter parse errors, drop down to "Text".
+	         </ul>
+	      </div>
+	      Type Program Here: <span id="mq_in" style='background-color:white'></span>
+	   </div>
+	   <div id="comment_zone"></div>
+	   <div id="flist_out" style="overflow-x:auto;white-space:nowrap"></div>
+	   <button onclick='test_level(g_current_level)'>Test Solution</button>
+	</div>
+	<div id="check_out"></div>
+	<h2>Step-By-Step Debugger:</h2>
+	<div class='zone'>
+	   <p>
+	      This isn't necessary for the game, but it can be useful to test your program on various inputs, to get an instinct for what <span class='fractran'>FRACTRAN</span> programs do. The area below provides some tools for doing that.
+	   <ul>
+	      <li> Enter an input value in the box and either the "Advance One Step" or "Advance 1000 Steps" buttons
+	      <li> You can also view a rudimentary animation of running numbers through the program
+	   </ul>
+	   </p>
+	   Input: <input type="text" value=2 style='width:10em' id="number_in" oninput="reset_runtable()"> <button onclick="butt_once()">Advance One Step</button> <button onclick="butt_many()">Advance 1000 Steps</button>
+	   Animation: <button id='ani_pp' onclick='butt_ani_pp()'>Play</button> Frame Number: <input type="number" style='width:5em' value=0 id="animation_framecount" oninput="do_animate()"> <button onclick='document.getElementById("animation_framecount").value = 0; do_animate()'>Reset</button>
+	   <div id="animation"></div>
+	   <div id="runtable"></div>
+	</div>
 </body>
 </html>

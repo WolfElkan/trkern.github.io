@@ -1585,7 +1585,7 @@
 
 </script>
 <style>
-	
+
 	@font-face {
 		font-family: "tech";
 		src: url("VT323-Regular.ttf");
@@ -1616,96 +1616,97 @@
 </head>
 <body onload="boot()">
 
-<h1 style="left:0;right:0;margin:auto;text-align:center"><code>FRACTRAN</code></h1>
+	<h1 style="left:0;right:0;margin:auto;text-align:center"><code>FRACTRAN</code></h1>
 
-<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white; font-family:tech'>
-Level Select:
-<span id="level_sel">
-</span> <button onclick="reset_local_data()">Reset Progress</button>
-</span>
+	<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white; font-family:tech'>
+		Level Select:
+		<span id="level_sel"></span>
+		<button onclick="reset_local_data()">Reset Progress</button>
+	</span>
 
-<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
-<div id="level_text">
-</div>
-</div>
+	<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
+		<div id="level_text"></div>
+	</div>
 
-<div id="check_out"></div>
+	<div id="check_out"></div>
 
-<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white; font-family:tech'>
-Input Device: <select id="sel_inp" onchange="do_sel_inp(event)">
-<option value="tmq">TKAS Mathquill</option>
-<option value="text" selected>Text</option>
-</select>
-</span>
+	<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white; font-family:tech'>
+		Input Device:
+		<select id="sel_inp" onchange="do_sel_inp(event)">
+			<option value="tmq">TKAS Mathquill</option>
+			<option value="text" selected>Text</option>
+		</select>
+	</span>
 
-<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
-<span id="chk_no_cancel_container"><input type="checkbox" id="chk_no_cancel" onchange="do_chk_no_cancel()"> nocancel </span>
-<span id="chk_comments_container"><input type="checkbox" id="chk_comments" onchange="do_chk_comments()"> Show Comment Box </span>
-<div id="text_in_area">
-<div id="ttext_instructions">
-Using TKAS.js to parse. Separate fractions with commas. Please report bugs. Needing parentheses around denominators which are products is not a bug. If you encounter problems, drop down to "Backup Text".
-</div>
-<div id="text_instructions">
-<ul>
-<li> Fractions are separated with spaces or commas.
-<li> Separate numerator and denominator with <kbd>/</kbd>. Do not include spaces within a fraction.
-<li> Numerator and denominator should be products of numbers (to powers).
-<li> Enter powers with <kbd>^</kbd>.
-<li> Multiply with <kbd>*</kbd>.
-<li> Do not use parentheses.
-</ul>
-<p>Example Program: 3/4*5, 2^3/5^4, 4*10^2/3^2*5</p>
-</div>
-<textarea type="text" id="text_in" oninput="do_text_in()"></textarea>
-</div>
+	<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
+		<span id="chk_no_cancel_container"><input type="checkbox" id="chk_no_cancel" onchange="do_chk_no_cancel()"> nocancel </span>
+		<span id="chk_comments_container"><input type="checkbox" id="chk_comments" onchange="do_chk_comments()"> Show Comment Box </span>
+		<div id="text_in_area">
+			<div id="ttext_instructions">
+			Using TKAS.js to parse. Separate fractions with commas. Please report bugs. Needing parentheses around denominators which are products is not a bug. If you encounter problems, drop down to "Backup Text".
+			</div>
+			<div id="text_instructions">
+				<ul>
+					<li> Fractions are separated with spaces or commas.
+					<li> Separate numerator and denominator with <kbd>/</kbd>. Do not include spaces within a fraction.
+					<li> Numerator and denominator should be products of numbers (to powers).
+					<li> Enter powers with <kbd>^</kbd>.
+					<li> Multiply with <kbd>*</kbd>.
+					<li> Do not use parentheses.
+				</ul>
+				<p>Example Program: 3/4*5, 2^3/5^4, 4*10^2/3^2*5</p>
+			</div>
+			<textarea type="text" id="text_in" oninput="do_text_in()"></textarea>
+		</div>
 
-<div id="demos_in_area">
-<div id="demos_in">
-<button onclick="load_program(sample_primegame)">Primegame</button>
-</div>
-</div>
+		<div id="demos_in_area">
+			<div id="demos_in">
+				<button onclick="load_program(sample_primegame)">Primegame</button>
+			</div>
+		</div>
 
-<div id="mq_in_area">
-<div id="tmq_instructions">
-Use <kbd>/</kbd> and <kbd>^</kbd> to create fractions, exponents. Separate fractions with commas. Use LEFT ARROW to break out of exponents and fractions. Please report bugs. If you encounter parse errors, drop down to "Backup Mathquill".
-</div>
-<div id="mq_instructions">
-<ul>
-<li> Fractions can be separated by spaces or commas.
-<li> Use <kbd>/</kbd> and <kbd>^</kbd> to create fractions, exponents.
-<li> Use arrow keys to navigate / break out of exponents and fractions.
-<li> Numerator and denominator should be products of numbers (to powers).
-<li> Multiply with <kbd>*</kbd>.
-<li> Do not use parentheses.
-</ul>
-</div>
-<div id="mq_in" style='background-color:white'></div>
-</div>
-<div id="comment_zone"></div>
-<button onclick='test_level(g_current_level)'>Test Solution</button>
-</div>
+		<div id="mq_in_area">
+			<div id="tmq_instructions">
+				Use <kbd>/</kbd> and <kbd>^</kbd> to create fractions, exponents. Separate fractions with commas. Use LEFT ARROW to break out of exponents and fractions. Please report bugs. If you encounter parse errors, drop down to "Backup Mathquill".
+			</div>
+			<div id="mq_instructions">
+				<ul>
+					<li> Fractions can be separated by spaces or commas.
+					<li> Use <kbd>/</kbd> and <kbd>^</kbd> to create fractions, exponents.
+					<li> Use arrow keys to navigate / break out of exponents and fractions.
+					<li> Numerator and denominator should be products of numbers (to powers).
+					<li> Multiply with <kbd>*</kbd>.
+					<li> Do not use parentheses.
+				</ul>
+			</div>
+			<div id="mq_in" style='background-color:white'></div>
+		</div>
+		<div id="comment_zone"></div>
+		<button onclick='test_level(g_current_level)'>Test Solution</button>
+	</div>
 
-<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white;  font-family:tech'>Your Program:
-</span>
+	<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white;  font-family:tech'>Your Program:
+	</span>
 
-<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
-<div id="flist_out" style="overflow-x:auto;white-space:nowrap"></div>
-</div>
+	<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
+		<div id="flist_out" style="overflow-x:auto;white-space:nowrap"></div>
+	</div>
 
-<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white;  font-family:tech'>Testing Ground:</span>
+	<span style='background-color: #266435; margin-left:10px; margin-right:10px; margin-bottom:0px; font-size:175%;color:white;  font-family:tech'>Testing Ground:</span>
 
-<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
-<input type="text" value=2 id="number_in" oninput="reset_runtable()"> <button onclick="butt_once()">Advance One Step</button> <button onclick="butt_many()">Advance 1000 Steps</button>
-<input type="number" value=0 id="animation_framecount" oninput="do_animate()"> <button id='ani_pp' onclick='butt_ani_pp()'>Play</button>
-<div id="animation"></div>
-<div id="runtable"></div>
-</div>
+	<div style='background-color: #CCDDAA; padding:10px; margin:10px; margin-top:0px'>
+		<input type="text" value=2 id="number_in" oninput="reset_runtable()">
+		<button onclick="butt_once()">Advance One Step</button>
+		<button onclick="butt_many()">Advance 1000 Steps</button>
+		<input type="number" value=0 id="animation_framecount" oninput="do_animate()">
+		<button id='ani_pp' onclick='butt_ani_pp()'>Play</button>
+		<div id="animation"></div>
+		<div id="runtable"></div>
+	</div>
 
-<div id="optionbox" style='background-color: #DDDDDD;position:fixed; right:0px; top:0px'>
-Options
-</div>
-
-
+	<div id="optionbox" style='background-color: #DDDDDD;position:fixed; right:0px; top:0px'>
+		Options
+	</div>
 
 </body>
 </html>

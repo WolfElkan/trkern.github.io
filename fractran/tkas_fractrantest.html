@@ -155,31 +155,31 @@
 
 </style>
 </head>
-<body>
-Please enter a formula in the text box below and hit "parse!" <br>
-Supported math:
-<ul>
-<li> +, - , *, /, ^
-<li> Absolute value, as |x| or abs(x)
-<li> sqrt, root(a,b) for the ath root of b
-<li> ln, log, sin-csc
-<li> =, <, >, <=, >=, !=
-</ul>
-Three things will appear:
-<ul>
-<li> A tree representing the internal structure of the formula (hover your mouse over the nodes!)
-<li> The formula itself, pretty-printed (hover your mouse over the formula!)
-<li> The steps of the parse process (for debugging purposes)
-</ul>
-The "colorify" button will color each node of the tree for debugging purposes<br>
-<input id="in"> <button onclick="pemdastest(document.getElementById('in').value)">Parse!</button> <button onclick="colorif()">Colorify</button>
-<span id="jsout"></span>
-<span id="out" style="font-size:100%"></span>
-<br>
-<span id="out2" style="font-size:300%"></span>
-<br>
-<span id="out3" style="font-size:100%"></span>
-<br>
-<span id="out4"></span>
-</body>
+	<body>
+		Please enter a formula in the text box below and hit "parse!" <br>
+		Supported math:
+		<ul>
+			<li> +, - , *, /, ^
+			<li> Absolute value, as |x| or abs(x)
+			<li> sqrt, root(a,b) for the ath root of b
+			<li> ln, log, sin-csc
+			<li> =, <, >, <=, >=, !=
+		</ul>
+		Three things will appear:
+		<ul>
+			<li> A tree representing the internal structure of the formula (hover your mouse over the nodes!)
+			<li> The formula itself, pretty-printed (hover your mouse over the formula!)
+			<li> The steps of the parse process (for debugging purposes)
+		</ul>
+		The "colorify" button will color each node of the tree for debugging purposes<br>
+		<input id="in"> <button onclick="pemdastest(document.getElementById('in').value)">Parse!</button> <button onclick="colorif()">Colorify</button>
+		<span id="jsout"></span>
+		<span id="out" style="font-size:100%"></span>
+		<br>
+		<span id="out2" style="font-size:300%"></span>
+		<br>
+		<span id="out3" style="font-size:100%"></span>
+		<br>
+		<span id="out4"></span>
+	</body>
 </html>
