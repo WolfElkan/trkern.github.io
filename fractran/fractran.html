@@ -12,6 +12,8 @@
 <title> Fractran </title>
 <script>
 
+// Mathematical Functions
+
 	var MQ = MathQuill.getInterface(2);
 
 	var cursor_str = "<span style='border-left: 1px solid black; margin-left:-1px;padding:0'>&#8203;</span>";
@@ -686,6 +688,7 @@
 		return(tkas_to_rawpls(L));
 		};
 
+// HTML Functions
 
 	var g_rawfl = [];
 	var g_fracl = [];
@@ -992,6 +995,7 @@
 		document.getElementById("animation").innerHTML = str;
 		}
 
+// Game Functions
 
 	var g_ani_flag = false;
 
@@ -1351,6 +1355,8 @@
 		load_level(0);
 		do_chk_show_instructions()
 		}
+
+// Level Definitions
 
 	var levels = [];
 	/*levels.push({
@@ -1830,86 +1836,97 @@
 
 </script>
 <style>
-@font-face {
-	font-family: "tech";
-	src: url("lmmonoproplt10-regular-webfont.woff");
-	}
-@font-face {
-	font-family: "questrial";
-	src: url("Questrial-Regular.ttf");
-	}
-body {
-	font-size:130%;
-	font-family: questrial, sans-serif;
-	}
-button {
-	font-size:90%;
-	font-family: questrial, sans-serif;
-	}
-code {
-	font-family: tech, monospace;
-	}
-.fractran {
-	font-family: tech, monospace;
-	}
-kbd {
-	background-color:white;
-	border-radius: 3px;
-	padding: 2px;
-	border: 1px solid black;
-	font-family: monospace;
-	margin:2px;
-	display:inline-block;
-	}
-input {
-	font-family: monospace;
-	}
-button {
-	border-width:2px;
-	border-style: outset;
-	border-color: #DDDDDD;
-	background-color: #DDDDDD;
-	}
-button:active {
-	border-style: inset;
+	
+	@font-face {
+		font-family: "tech";
+		src: url("lmmonoproplt10-regular-webfont.woff");
 	}
 
-h2 {
-	background-color: #266435;
-	margin-left:10px;
-	margin-right:10px;
-	margin-bottom:0px;
-	margin-top: 0px;
-	font-size:175%;
-	color:white;
-	font-family:tech, monospace;
-	display: inline-block;
-	font-weight: normal;
-	padding-left: 5px;
-	padding-right: 5px;
+	@font-face {
+		font-family: "questrial";
+		src: url("Questrial-Regular.ttf");
 	}
 
-h3 {
-	background-color: white;
-	margin-left:0px;
-	margin-right:10px;
-	margin-bottom:0px;
-	margin-top: 0px;
-	font-size:175%;
-	color:black;
-	font-family:tech, monospace;
-	display: inline-block;
-	font-weight: normal;
-	padding-left: 5px;
-	padding-right: 5px;
+	body {
+		font-size:130%;
+		font-family: questrial, sans-serif;
 	}
 
-.zone {
-	background-color: #CCDDAA; 
-	padding:10px; 
-	margin:10px;
-	margin-top:0px;
+	button {
+		font-size:90%;
+		font-family: questrial, sans-serif;
 	}
+
+	code {
+		font-family: tech, monospace;
+	}
+
+	.fractran {
+		font-family: tech, monospace;
+	}
+
+	kbd {
+		background-color:white;
+		border-radius: 3px;
+		padding: 2px;
+		border: 1px solid black;
+		font-family: monospace;
+		margin:2px;
+		display:inline-block;
+	}
+
+	input {
+		font-family: monospace;
+	}
+
+	button {
+		border-width:2px;
+		border-style: outset;
+		border-color: #DDDDDD;
+		background-color: #DDDDDD;
+	}
+
+	button:active {
+		border-style: inset;
+	}
+
+	h2 {
+		background-color: #266435;
+		margin-left:10px;
+		margin-right:10px;
+		margin-bottom:0px;
+		margin-top: 0px;
+		font-size:175%;
+		color:white;
+		font-family:tech, monospace;
+		display: inline-block;
+		font-weight: normal;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	h3 {
+		background-color: white;
+		margin-left:0px;
+		margin-right:10px;
+		margin-bottom:0px;
+		margin-top: 0px;
+		font-size:175%;
+		color:black;
+		font-family:tech, monospace;
+		display: inline-block;
+		font-weight: normal;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.zone {
+		background-color: #CCDDAA; 
+		padding:10px; 
+		margin:10px;
+		margin-top:0px;
+	}
+
 </style>
 </head>
 <body onload="boot()">
