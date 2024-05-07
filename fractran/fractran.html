@@ -12,6 +12,8 @@
 <title> Fractran </title>
 <script>
 
+// Mathematical Functions
+
 	var MQ = MathQuill.getInterface(2);
 
 	var cursor_str = "<span style='border-left: 1px solid black; margin-left:-1px;padding:0'>&#8203;</span>";
@@ -686,6 +688,8 @@
 		return(tkas_to_rawpls(L));
 		};
 
+// HTML Functions
+
 	var g_rawfl = [];
 	var g_fracl = [];
 
@@ -990,6 +994,8 @@
 
 		document.getElementById("animation").innerHTML = str;
 		}
+
+// Game Functions
 
 	var g_ani_flag = false;
 
@@ -1349,6 +1355,8 @@
 		load_level(0);
 		do_chk_show_instructions()
 		}
+
+// Level Definitions
 
 	var levels = [];
 	/*levels.push({
@@ -1828,7 +1836,7 @@
 
 </script>
 <style>
-
+	
 	@font-face {
 		font-family: "tech";
 		src: url("lmmonoproplt10-regular-webfont.woff");
